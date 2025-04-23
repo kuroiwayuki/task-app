@@ -1,0 +1,20 @@
+<p style="color: green"><%= notice %></p>
+<h1><%= @show_title %></h1>
+
+<div id="<%= dom_id(@task) %>">
+  <p>
+    <strong>タイトル:</strong>
+    <%= @task.title %>
+  </p>
+
+  <p>
+    <strong>内容:</strong>
+    <%= @task.body %>
+  </p>
+</div>
+
+<div class="mt-4 space-x-4">
+  <%= link_to "編集", edit_task_path(@task), class: "text-blue-600 hover:underline" %>
+  <%= link_to "一覧", tasks_path, class: "text-blue-600 hover:underline" %>
+  <%= button_to "削除", @task, method: :delete, data: { confirm: "本当に削除しますか？" }, class: "text-red-600 hover:underline" %>
+</div>
