@@ -1,0 +1,13 @@
+{
+  "emmet.includeLanguages": {
+    "erb": "html",
+    "html.erb": "html"
+  },
+  "files.associations": {
+    "*.html.erb": "html"
+  },
+  "terminal.integrated.env.osx": {
+    "LANG": "en_US.UTF-8",
+    "LC_ALL": "en_US.UTF-8"
+  }
+}

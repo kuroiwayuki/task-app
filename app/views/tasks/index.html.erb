@@ -1,4 +1,20 @@
-<div>
-  <h1 class="font-bold text-4xl">Tasks#index</h1>
-  <p>Find me in app/views/tasks/index.html.erb</p>
+<%# -*- coding: utf-8 -*- %>
+
+<p style="color: green"><%= notice %></p>
+
+<div id="tasks">
+  <% @tasks.each do |task| %>
+  <div id="<%= dom_id task %>">
+    <p>
+      <strong>タイトル:</strong>
+      <%= task.title %>
+    </p>
+
+    <p>
+      <strong>内容:</strong>
+      <%= task.body %>
+    </p>
+    <p><%= link_to "詳細", task %></p>
+  </div>
+  <% end %>
 </div>
