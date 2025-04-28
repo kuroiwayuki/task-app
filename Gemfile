@@ -79,3 +79,5 @@ end
 
 gem "logger"
 
+
+gem "rubocop", "~> 1.75", :group => :development
