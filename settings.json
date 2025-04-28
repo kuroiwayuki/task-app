@@ -9,5 +9,9 @@
   "terminal.integrated.env.osx": {
     "LANG": "en_US.UTF-8",
     "LC_ALL": "en_US.UTF-8"
+  },
+  "editor.formatOnSave": true,
+  "[ruby]": {
+    "editor.defaultFormatter": "shopify.ruby-lsp"
   }
 }

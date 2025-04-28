@@ -1,0 +1,6 @@
+<div>
+      <%= form_with url: status_update_task_path(task), method: :patch, local: true do |form| %>
+        <%= form.check_box :status, { checked: task.done? }, "done", "todo" %>
+        <%= form.submit "更新", class: "ml-2 bg-blue-500 hover:bg-blue-600 text-white font-bold py-1 px-3 rounded" %>
+      <% end %>
+    </div>
