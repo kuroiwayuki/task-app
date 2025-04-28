@@ -1,0 +1,43 @@
+<%# app/views/users/new.html.erb %>
+
+<div class="max-w-md mx-auto bg-white p-8 rounded-2xl shadow-md mt-10">
+  <h1 class="text-2xl font-bold mb-6 text-center">新規登録</h1>
+
+  <%= form_with model: @user, local: true do |form| %>
+    <% if @user.errors.any? %>
+      <div class="mb-6">
+        <h2 class="text-red-600 font-semibold mb-2">
+          <%= pluralize(@user.errors.count, "件のエラー") %>があります
+        </h2>
+        <ul class="list-disc list-inside text-red-500">
+          <% @user.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <!-- 名前 -->
+    <div class="mb-4">
+      <%= form.label :name, "名前", class: "block mb-1 font-semibold" %>
+      <%= form.text_field :name, class: "w-full border p-2 rounded" %>
+    </div>
+
+    <!-- メールアドレス -->
+    <div class="mb-4">
+      <%= form.label :email, "メールアドレス", class: "block mb-1 font-semibold" %>
+      <%= form.email_field :email, class: "w-full border p-2 rounded" %>
+    </div>
+
+    <!-- パスワード -->
+    <div class="mb-6">
+      <%= form.label :password, "パスワード", class: "block mb-1 font-semibold" %>
+      <%= form.password_field :password, class: "w-full border p-2 rounded" %>
+    </div>
+
+    <!-- 登録ボタン -->
+    <div class="text-center">
+      <%= form.submit "登録する", class: "bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-6 rounded-xl" %>
+    </div>
+  <% end %>
+</div>

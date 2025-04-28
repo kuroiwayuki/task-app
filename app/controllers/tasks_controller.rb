@@ -9,9 +9,13 @@ class TasksController < ApplicationController
   end
 
   def create
-    @task = Task.create(task_params)
-    redirect_to @task
+  @task = Current.user.tasks.build(task_params)
+  if @task.save
+    redirect_to root_path, notice: "タスクを作成しました！"
+  else
+    render :new, status: :unprocessable_entity
   end
+end
 
   def show
     @task = Task.find(params[:id])
@@ -23,18 +27,17 @@ class TasksController < ApplicationController
   end
 
   def update
-    # binding.pry
     #editページから送信されたparams(title,body)に変換
-    @task = Task.update(task_params)
+    @task = Task.where(id: params[:id]).update(task_params)
     redirect_to root_path
 
   end
 
 
-  def delete
-    @task.delete
-    redirect_to root_path
-  end
+  def destroy
+  @task = Task.find(params[:id]).destroy
+  redirect_to root_path, notice: "タスクを削除しました！"
+end
 
   
   private
