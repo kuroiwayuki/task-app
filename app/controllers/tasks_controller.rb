@@ -4,7 +4,6 @@ class TasksController < ApplicationController
     @tasks = case params[:sort]
              when 'asc'
                Task.order(created_at: :asc)
-               binding.pry
              when 'desc'
                Task.order(created_at: :desc)
              else
@@ -43,6 +42,12 @@ class TasksController < ApplicationController
   def destroy
     @task = Task.find(params[:id]).destroy
     redirect_to root_path, notice: 'タスクを削除しました！'
+  end
+
+  def status_update
+    @task = Task.find(params[:id])
+    @task.update(status: params[:status])
+    redirect_to root_path, notice: '進捗を更新しました'
   end
 
   private
