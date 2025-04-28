@@ -1,0 +1,19 @@
+<h1 class="text-2xl font-bold mb-6 text-center">ログイン</h1>
+
+<div class="max-w-md mx-auto bg-white p-8 rounded-2xl shadow-md mt-10">
+  <%= form_with url: login_path, local: true do |form| %>
+    <div class="mb-4">
+      <%= form.label :email, "メールアドレス", class: "block font-semibold mb-1" %>
+      <%= form.text_field :email, placeholder: "user@example.com", class: "w-full border p-2 rounded" %>
+    </div>
+
+    <div class="mb-6">
+      <%= form.label :password, "パスワード", class: "block font-semibold mb-1" %>
+      <%= form.password_field :password, placeholder: "パスワードを入力してください", class: "w-full border p-2 rounded" %>
+    </div>
+
+    <div class="text-center">
+      <%= form.submit "ログイン", class: "bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-6 rounded-xl" %>
+    </div>
+  <% end %>
+</div>
