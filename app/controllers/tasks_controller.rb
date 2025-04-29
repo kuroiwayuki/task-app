@@ -1,14 +1,22 @@
 class TasksController < ApplicationController
+  before_action :authenticate_user, { only: %i[edit update status_update logout] }
+
   def index
     # task_modelから全タスクデータを取得
-    @tasks = case params[:sort]
-             when 'asc'
-               Task.order(created_at: :asc)
-             when 'desc'
-               Task.order(created_at: :desc)
-             else
-               Task.all
-             end
+    @tasks = Task.all
+    case params[:sort]
+    when 'asc'
+      Task.order(created_at: :asc)
+    when 'desc'
+      Task.order(created_at: :desc)
+    end
+
+    case params[:period]
+    when 'week'
+      @tasks = @tasks.where('created_at >= ?', 1.week.ago)
+    when 'month'
+      @tasks = @tasks.where('created_at >= ?', Time.current.beginning_of_month)
+    end
   end
 
   def new

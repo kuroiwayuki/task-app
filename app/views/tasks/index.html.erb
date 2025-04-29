@@ -1,6 +1,7 @@
 <p class="text-green-600 text-center text-lg font-semibold mb-6"><%= notice %></p>
 <%= link_to "昇順", tasks_path(sort: "asc"), class: "underline text-blue-500" %> |
 <%= link_to "降順", tasks_path(sort: "desc"), class: "underline text-blue-500" %>
+<%= render 'shared/selection_piriod'%>
 
 <div id="tasks" class="grid sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 px-6">
   <% @tasks.each do |task| %>
