@@ -1,0 +1,5 @@
+Style/GuardClause:
+  Enabled: false
+
+Style/UnlessElse:
+  Enabled: false

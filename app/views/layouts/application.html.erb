@@ -6,16 +6,15 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %>
-
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
-
+  
   <body class="bg-gray-50 text-gray-800 min-h-screen font-sans flex flex-col">
     <!-- ヘッダー -->
-     <%= render 'shared/header' %>
-
-    <!-- フラッシュメッセージ -->
+    <%= render 'shared/header' %>
+    
+    <!-- フラッシュ -->
+    <div id="flash"></div>
     <div class="max-w-3xl mx-auto mt-4 px-4">
       <% flash.each do |type, msg| %>
         <div class="p-4 mb-4 rounded-xl shadow-md 
@@ -27,12 +26,10 @@
 
     <!-- メインコンテンツ -->
     <main class="flex-grow px-8 py-10 max-w-screen-2xl mx-auto">
-
-
       <%= yield %>
     </main>
-
     <!-- フッター -->
-     <%= render 'shared/footer' %>
+    <%= render 'shared/footer' %>
+    
   </body>
 </html>

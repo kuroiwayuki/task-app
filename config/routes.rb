@@ -15,5 +15,9 @@ Rails.application.routes.draw do
     member do
       patch :status_update
     end
+    collection do
+      get :modal  # <= これを追加
+    end
   end
+  
 end

@@ -1,0 +1,11 @@
+<%= form_with model: task, url: tasks_path, method: :post do |form| %>
+  <div class="mb-4">
+    <%= form.label :title, "タイトル" %>
+    <%= form.text_field :title, class: "border p-2 w-full" %>
+  </div>
+  <div class="mb-4">
+    <%= form.label :body, "本文" %>
+    <%= form.text_area :body, class: "border p-2 w-full h-24" %>
+  </div>
+  <%= form.submit "登録", class: "bg-green-500  px-4 py-2 rounded" %>
+<% end %>

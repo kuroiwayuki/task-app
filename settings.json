@@ -4,7 +4,8 @@
     "html.erb": "html"
   },
   "files.associations": {
-    "*.html.erb": "html"
+    "*.html.erb": "html",
+    "*.component": "javascript" // ←こういうのがあってもOK
   },
   "terminal.integrated.env.osx": {
     "LANG": "en_US.UTF-8",

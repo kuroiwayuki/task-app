@@ -1,15 +1,18 @@
 {
-    "emmet.includeLanguages": {
-        "erb": "html",
-        "html.erb": "html"
-    },
-    "files.associations": {
-        "*.html.erb": "erb"
-    },
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true,
-    "terminal.integrated.env.osx": {
-        "LANG": "en_US.UTF-8",
-        "LC_ALL": "en_US.UTF-8"
-    }
+  "emmet.includeLanguages": {
+    "erb": "html",
+    "html.erb": "html"
+  },
+  "files.associations": {
+    "*.html.erb": "erb"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "terminal.integrated.env.osx": {
+    "LANG": "en_US.UTF-8",
+    "LC_ALL": "en_US.UTF-8"
+  },
+  "[erb]": {
+    "editor.defaultFormatter": "Shopify.ruby-lsp"
+  }
 }

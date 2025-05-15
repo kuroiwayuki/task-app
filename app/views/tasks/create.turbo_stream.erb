@@ -1,0 +1,9 @@
+<turbo-stream action="after" target="modal">
+  <template>
+    <script>
+      document.getElementById("modal").dispatchEvent(new CustomEvent("modal:close"))
+    </script>
+  </template>
+</turbo-stream>
+
+<%= turbo_stream.prepend "task-list", partial: "tasks/task", locals: { task: @task } %>
