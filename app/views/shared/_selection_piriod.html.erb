@@ -1,11 +1,12 @@
 <div class="mb-4 text-center">
-  <%= form_with url: tasks_path, method: :get, local: true do %>
+  <%= form_with url: tasks_path, method: :get, local: true do|f| %>
     <label for="period" class="font-semibold mr-2">期間で絞り込み:</label>
+    <%= f.date_field :created_at, value: params[:created_at], class: "border p-2 rounded-lg w-full" %>
     <select name="period" id="period" class="border rounded p-2">
       <option value="">すべて</option>
       <option value="week">1週間以内</option>
       <option value="month">今月</option>
     </select>
-    <%= submit_tag "絞り込み", class: "ml-2 bg-blue-500 text-white px-3 py-1 rounded" %>
+    <%= f.submit "絞り込み", class: "ml-2 bg-blue-500 text-white px-3 py-1 rounded" %>
   <% end %>
 </div>

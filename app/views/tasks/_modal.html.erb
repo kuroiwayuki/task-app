@@ -1,0 +1,19 @@
+<%= turbo_frame_tag "modals", class: "contents" do %>
+  <div class="fixed inset-0 bg-black/50 z-50 flex justify-center items-center" data-controller="modals" data-modals-target="background">
+    <div class="bg-white p-6 rounded shadow-md w-full max-w-md">
+      <div class="flex justify-end">
+        <button data-action="modals#close" class="text-gray-500 text-xl">&times;</button>
+      </div>
+
+      <%= form_with model: @task do |form| %>
+        <%= form.label :title %>
+        <%= form.text_field :title, class: "border p-2 w-full" %>
+
+        <%= form.label :body %>
+        <%= form.text_area :body, class: "border p-2 w-full h-32" %>
+
+        <%= form.submit "登録", class: "bg-blue-500 text-white px-4 py-2 rounded mt-4" %>
+      <% end %>
+    </div>
+  </div>
+<% end %>

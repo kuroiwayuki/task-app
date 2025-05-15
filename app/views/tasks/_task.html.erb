@@ -1,0 +1,12 @@
+<div id="<%= dom_id task %>" class="bg-white border border-gray-200 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 p-6 flex flex-col justify-between">
+  <div>
+    <h2 class="text-2xl font-bold text-blue-600 flex items-center gap-2 mb-2">
+      <span class="text-lg">📌</span>
+      <%= link_to task.title, task, data: { turbo_frame: "task-list" } %>
+    </h2>
+    <p class="text-gray-700 mb-4 break-words">
+      <%= task.body %>
+    </p>
+  </div>
+  <%= render 'shared/form_update', task: task %>
+</div>
